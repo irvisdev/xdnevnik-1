@@ -70,7 +70,6 @@ const Config = {
 			'expo-dev-client',
 			'expo-updates',
 			'expo-build-properties',
-			['@sentry/react-native/expo', sentry],
 			[
 				'expo-splash-screen',
 				{
