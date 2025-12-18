@@ -23,7 +23,7 @@ type PersistentKeys = Record<'scheme' | 'accentColor', string> & {
 }
 
 export class ThemeStore {
-	static readonly defaultAccentColor = '#578059'
+	static readonly defaultAccentColor = '#FF4500'
 	static getDefaultAccentColors() {
 		return [this.defaultAccentColor, '#427979', '#3C639C', '#967857', '#926759']
 	}
