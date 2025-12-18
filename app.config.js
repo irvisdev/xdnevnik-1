@@ -14,7 +14,6 @@ const projectId = '97163afe-5c7e-4856-ba8f-348e00aa7c04'
 
 // eslint-disable-next-line no-undef
 const IS_DEV = !!process.env.DEV
-
 const id = IS_DEV
 	? 'com.leaftail1880.xdnevnik.dev'
 	: 'com.leaftail1880.xdnevnik'
@@ -33,7 +32,7 @@ const Config = {
 		name: IS_DEV ? name + ' Dev Client' : name,
 		slug: slug,
 		version: version,
-		owner: 'leaftail1880',
+		owner: 'irvisdev',
 		orientation: 'default',
 		icon: './assets/icon.png',
 		assetBundlePatterns: ['**/*'],
@@ -106,10 +105,10 @@ const Config = {
 			url: `https://u.expo.dev/${projectId}`,
 		},
 		extra: {
-			eas: {
-				projectId: projectId,
-			},
-		},
+      		eas: {
+        projectId: "588cf89b-1622-4638-a9bb-439647e02649"
+      }
+	}
 	},
 }
 
@@ -132,7 +131,7 @@ Config.expo = withGradleProperties(Config.expo, config => {
 		{
 			type: 'property',
 			key: 'org.gradle.jvmargs',
-			value: '-Xmx3096m -XX:MaxMetaspaceSize=512m',
+			value: '-Xmx2096m -XX:MaxMetaspaceSize=512m',
 		},
 		{
 			type: 'property',

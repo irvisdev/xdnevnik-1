@@ -20,7 +20,7 @@ export const Logger = logger.createLogger({
 	printLevel: false,
 })
 
-export const ACCENT_COLOR = '#578059'
+export const ACCENT_COLOR = '#FF4500'
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const globalStyles = StyleSheet.create({
