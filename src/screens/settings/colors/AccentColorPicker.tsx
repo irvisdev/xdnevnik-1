@@ -2,7 +2,7 @@ import { Theme } from '@/models/theme'
 import { observer } from 'mobx-react-lite'
 import { memo } from 'react'
 import { View } from 'react-native'
-import { Divider, List } from 'react-native-paper'
+import { Divider, List, TextInput } from 'react-native-paper'
 import ColorPicker, {
 	HueSlider,
 	Preview,
@@ -12,20 +12,27 @@ import ColorPicker, {
 export default observer(function AccentColorPicker() {
 	return (
 		<List.Section title="Акценты">
-			<List.Item title="Цвет акцентов"></List.Item>
-			<ColorPicker
-				style={{ width: '90%', alignSelf: 'center' }}
-				value={Theme.manage.getAccentColor()}
-				onComplete={color => Theme.manage.setAccentColor(color.hex)}
-			>
-				<ColorPickerPanel />
-				<Swatches colors={Theme.manage.getAccentColors()} />
-			</ColorPicker>
+			<List.Item title="Цвет акцентов" />
+
+			<View style={{ paddingHorizontal: Spacings.s2 }}>
+				<TextInput
+					label="accent"
+					value={Theme.accent}
+					defaultValue="#ff0000"
+					onChangeText={value =>
+						runInAction(() => {
+							Theme.accent = value
+						})
+					}
+					placeholder="#ff0000"
+				/>
+			</View>
+
 			<List.Item
-				title={'Очистить использованные цвета'}
+				title="Очистить использованные цвета"
 				onPress={Theme.manage.clearSelectedAccentColors}
-				left={props => <List.Icon icon="delete" {...props}></List.Icon>}
-			></List.Item>
+				left={props => <List.Icon icon="delete" {...props} />}
+			/>
 		</List.Section>
 	)
 })
